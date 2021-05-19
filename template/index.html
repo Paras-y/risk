@@ -1,0 +1,278 @@
+
+  
+  <!-- 
+NAME @: Paras Kumar Yadav 
+TOPIC @: Risk Analytics Model Deployment
+DATE @: 19/04/2021 
+-->
+
+  
+  <!-----------------------------  BASE SECTION  ----------------------------------->
+
+  
+  <!-- 
+NAME @: Paras Kumar Yadav 
+TOPIC @: Risk Analytics Model Deployment
+DATE @: 19/04/2021 
+-->
+
+<!DOCTYPE html>
+<html>
+<title>Risk Analytics</title>
+
+<!-----------------------------  EXTERNAL LIB SECTION  ----------------------------------->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+
+
+<!-----------------------------  CSS SECTION  ----------------------------------->
+<style>
+    body, html {
+      height: 100%;
+      font-family: "Inconsolata", sans-serif;
+    }
+    
+    .bgimg {
+      background-position: center;
+      background-size: cover;
+      background-image: src=("/home/sumit/PARAS/loan_approved_hero_image.jpg");‪
+      min-height: 75%;
+    }
+
+    #table1 {
+      width:800px;
+      margin: auto;
+    
+    }
+
+
+    #form1 {
+
+      border: 5px solid black;
+      padding: 20px 20px 20px 30px;
+      background-color: lightblue;
+
+
+    }
+
+
+    
+</style>
+
+
+<!-----------------------------  BODY SECTION  ----------------------------------->
+
+<body>  
+<!-----------------------------  HEADER SECTION  ----------------------------------->
+
+
+    <header class="bgimg w3-display-container w3-grayscale-min" id="home">
+
+        <div class="w3-display-bottomleft w3-center w3-padding-large w3-hide-small">
+            <span class="w3-tag">Created By Paras Kumar Yadav</span>
+        </div>
+
+        <center><div class=" w3-padding-16 " >
+          <span class="w3-text-white w3-tag w3-wide " style="font-size:70px">Risk Analysis</span>
+      </div></center>
+
+        <div class="w3-display-bottomright w3-center w3-padding-large">
+            <span class="w3-text-white">Using Support Vector Machine </span>
+        </div>
+
+    </header>
+
+
+    
+<!----------------------------- EXTENSION  ----------------------------------->
+    
+
+
+  <!---------------------------  HOME BODY SECTION   ------------------------------>
+
+<!-- Add a background color and large text to the whole page -->
+<div class="   w3-pale-red  w3-large">
+
+    <!-- About Container -->
+    <div class="w3-container" id="about">
+
+        <div class="w3-content" style="max-width:800px">
+
+            <h5 class="w3-center w3-padding-32"><span class="w3-tag w3-wide">ABOUT THE PROJECT</span></h5>
+            
+            <h3>Credit Risk : </h3>
+
+            <br>
+
+            <p>Credit risk is nothing but the default in payment of any loan by the borrower. 
+                In Banking sector this is an important factor to be considered before approving 
+                the loan of an applicant.
+            </p>
+
+            <br>
+
+            <h3>Impact of Credit Risk :</h3>
+
+            <br>
+
+           
+
+            <p>Taking into consideration the factors that will decide whether a person will pay 
+               back the loan or not is crucial for banks. This is a common credit risk problem 
+               which is solved using analytics.
+            
+            </p>
+        
+    
+        </div>
+    </div>
+
+<br>
+<br>
+
+  <!-----------------------------  FORM SECTIOIN  ----------------------------------->
+
+    <div class="w3-content" id="form1" style="max-width:800px">
+
+    <center>
+    <h1>Please fill out the form below</h1>
+    </center>
+    <br>
+    <hr>
+
+    <form action="/predict"method="post">
+      <div class="row">
+          <div class="col-md-12">
+        <h1> Loan prediction web app </h1>
+
+
+          <legend><span class="number">1</span> Basic Info</legend>
+
+          <label>Gender:</label>
+          <input type="radio" id="Male" value="0" name="Gender"><label for="Male" class="light">Male</label><br>
+          <input type="radio" id="Female" value="1" name="Gender"><label for="Female" class="light">Female</label><br>
+          <br>
+
+          <label for="Married">Marital status:</label>
+          <select id="married" name="Married">
+              <option value="0">Not married</option>
+              <option value="1">Married</option>
+          </select>
+
+          <label for="dependents">Number of children:</label>
+          <select id="dependents" name="Dependents">
+              <option value="0">Not applicable</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3 or more</option>
+          </select>
+
+          <label for="Education">Education level:</label>
+          <select id="education" name="Education">
+              <option value="1">Graduate</option>
+              <option value="0">Not graduate</option>
+          </select>
+
+          <label for="SelfEmployed">Employment status:</label>
+          <select id="selfemployed" name="Self_Employed">
+              <option value="0">Not self employed</option>
+              <option value="1">Self employed</option>
+          </select>
+
+          <label for="ApplicantIncome">Current monthly income:</label>
+          <input type="number" id="ApplicantIncome" name="ApplicantIncome">
+
+          <label for="CoapplicantIncome">Spouse's income (if not married put 0):</label>
+          <input type="number" id="CoapplicantIncome" name="CoapplicantIncome">
+
+          <label for="LoanAmount">Desired loan amount:</label>
+          <input type="number" id="LoanAmount" name="LoanAmount">
+
+          <label for="LoanTerm">Chosen loan term:</label>
+          <select id="LoanTerm" name="Loan_Amount_Term">
+              <option value="0">Loan term</option>
+              <option value="12">12 days</option>
+              <option value="36">36 days</option>
+              <option value="60">2 months</option>
+              <option value="84">84 days</option>
+              <option value="120">4 months</option>
+              <option value="180">6 months</option>
+              <option value="240">8 months</option>
+              <option value="300">10 months</option>
+              <option value="360">1 year</option>
+              <option value="480">16 months</option>
+          </select>
+
+          <label for="Credit history">Credit history:</label>
+          <select id="credit history" name="Credit_History">
+              <option value="1">Yes</option>
+              <option value="0">No</option>
+          </select>
+
+          <label>Geographical area:</label>
+          <input type="checkbox" id="Semiurban" value="0" name="Property_Area"><label class="light" for="semiurban">Semiurban</label>
+          <input type="checkbox" id="urban" value="1" name="Property_Area"><label class="light" for="urban">Urban</label>
+          <input type="checkbox" id="rural" value="2" name="Property_Area"><label class="light" for="rural">Rural</label>
+          <br>
+          <br>
+          <br>
+
+        <button type="submit">PREDICT</button>
+
+        </div>
+
+       
+
+    </form>
+    <br>
+    <br>
+    {{ prediction_text }}
+      </div>
+       </div>
+
+</body>
+
+
+    </div>
+
+  <!----------------------------------------------------------------------------->
+
+
+
+
+</div>
+
+
+<!----------------------------------------------------------------------------->
+
+
+
+
+
+</body>
+<!-----------------------------  FOOTER SECTION  ----------------------------------->
+
+<footer class="w3-container w3-black w3-center w3-margin-top">
+    <p>Find me on social media.</p>
+  
+      
+      <br>
+      <br>
+    </footer>
+  </html>
+
+  <!-----------------------------  THE END  ----------------------------------->
