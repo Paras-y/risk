@@ -1,0 +1,102 @@
+
+  
+<!-- 
+NAME @: Paras Kumar Yadav 
+TOPIC @: Risk Analytics Model Deployment
+DATE @: 19/04/2021 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.5">
+        <title>Loan Risk Analysis web app</title>
+	<div class="w3-display-bottomleft w3-center w3-padding-large w3-hide-small">
+            <span class="w3-tag">Created By Paras Kumar Yadav</span>
+        </div>
+        <link rel="stylesheet" href="https://codepen.io/gymratpacks/pen/VKzBEp#0">
+        <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="static/app.css">
+</head>
+<body>
+<div>
+    <form action="/predict"method="post">
+          <input id="csrf_token" name="csrf_token" type="hidden" value="IjM0ZWJkNzBjNmU0N2MyMjg5MzUwOWU4MDNlOTk2MTIxZmNhZDQ0NGYi.YKRBRg.4GZUNMFOxuhNEWkUjIfmoNwiRKI">
+
+          <label for="Name">Enter Your Full Name :    </label><input id="Name" name="Name" required type="text" value="">
+          <hr>
+
+          <label for="Gender">Please choose your Gender : </label> <ul id="Gender"><li><input id="Gender-0" name="Gender" type="radio" value="1"> <label for="Gender-0">Male</label></li><li><input id="Gender-1" name="Gender" type="radio" value="0"> <label for="Gender-1">Female</label></li></ul>
+          <hr>
+
+          <label for="Maritual">Please choose your Marital status : </label> <ul id="Maritual"><li><input id="Maritual-0" name="Maritual" type="radio" value="1"> <label for="Maritual-0">Married</label></li><li><input id="Maritual-1" name="Maritual" type="radio" value="0"> <label for="Maritual-1">Unmarried</label></li></ul>
+          <hr>
+
+          <label for="Dependent">Enter Total Number Of Dependent People : </label> <input id="Dependent" name="Dependent" required type="text" value="">
+          <hr>
+
+          <label for="Education">Educational Details : </label> <ul id="Education"><li><input id="Education-0" name="Education" type="radio" value="1"> <label for="Education-0">Not-Graduate</label></li><li><input id="Education-1" name="Education" type="radio" value="0"> <label for="Education-1">Graduate</label></li></ul>
+          <hr>
+
+          <label for="Employment">Are you self Employed : </label> <ul id="Employment"><li><input id="Employment-0" name="Employment" type="radio" value="1"> <label for="Employment-0">Yes</label></li><li><input id="Employment-1" name="Employment" type="radio" value="0"> <label for="Employment-1">No</label></li></ul>
+          <hr>
+
+
+          <label for="ApplicantIncome">Current monthly income:</label>
+          <input type="number" id="ApplicantIncome" name="ApplicantIncome">
+
+          <label for="CoapplicantIncome">Spouse's income (if not married put 0):</label>
+          <input type="number" id="CoapplicantIncome" name="CoapplicantIncome">
+
+          <label for="LoanAmount">Desired loan amount:</label>
+          <input type="number" id="LoanAmount" name="LoanAmount">
+
+          <label for="LoanTerm">Chosen loan term:</label>
+          <select id="LoanTerm" name="Loan_Amount_Term">
+              <option value="0">Loan term</option>
+              <option value="12">12 days</option>
+              <option value="36">36 days</option>
+              <option value="60">2 months</option>
+              <option value="84">84 days</option>
+              <option value="120">4 months</option>
+              <option value="180">6 months</option>
+              <option value="240">8 months</option>
+              <option value="300">10 months</option>
+              <option value="360">1 year</option>
+              <option value="480">16 months</option>
+          </select>
+
+          <label for="Credit history">Credit history:</label>
+          <select id="credit history" name="Credit_History">
+              <option value="1">Yes</option>
+              <option value="0">No</option>
+          </select>
+
+          <label>Geographical area:</label>
+          <input type="checkbox" id="Semiurban" value="0" name="Property_Area"><label class="light" for="semiurban">Semiurban</label>
+          <input type="checkbox" id="urban" value="1" name="Property_Area"><label class="light" for="urban">Urban</label>
+          <input type="checkbox" id="rural" value="2" name="Property_Area"><label class="light" for="rural">Rural</label>
+          <br>
+          <br>
+          <br>
+
+        <button type="submit">PREDICT</button>
+
+    </form>
+    <br>
+    <br>
+    {{ prediction_text }}
+      </div>
+       </div>
+
+</body>
+<footer class="w3-container w3-black w3-center w3-margin-top">
+    <p>PARAS KUMAR YADAV.</p>
+  
+      
+      <br>
+      <br>
+    </footer>
+  </html>
+
+</html>
